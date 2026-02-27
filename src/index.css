@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+
+    /* Anvora Specific */
+    --anvora-black: 257 28% 8%;
+    /* #0F0F1A */
+    --anvora-indigo: 243 75% 59%;
+    /* #4F46E5 */
+    --anvora-indigo-light: 243 85% 70%;
+    --anvora-indigo-glow: 243 75% 59%;
+    --anvora-gold: 42 96% 56%;
+    /* #FBBF24 */
+    --anvora-gold-light: 42 100% 70%;
+    --anvora-gold-dark: 35 100% 40%;
+    --anvora-glass: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-anvora-black text-foreground antialiased font-body overflow-x-hidden selection:bg-anvora-gold selection:text-anvora-black;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Glassmorphism Classes */
+  .glass-card {
+    @apply bg-black/10 backdrop-blur-md border border-white/5;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-500 hover:bg-white/5 hover:border-white/10 hover:shadow-2xl hover:shadow-anvora-indigo/20;
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-anvora-gold via-anvora-gold-light to-anvora-gold bg-[length:200%_auto] animate-gradient-x;
+  }
+
+  .text-gradient-cinematic {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-anvora-indigo-light bg-[length:200%_auto] animate-gradient-x;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #05050A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4F46E5;
+  }
+
+  /* Cinematic Utilities */
+  .bg-gradient-hero {
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #000000 60%);
+  }
+
+  .animate-gradient-x {
+    animation: gradient-x 8s linear infinite;
+  }
+
+  @keyframes gradient-x {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
